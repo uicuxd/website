@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" >
+  <title>mobile background for old browser</title>
+  <desc>Author: Shakiba Moshiri. MIT license. Has be crated manually on adobe brackets editor.</desc>
+  <g>
+	<path stroke="none" fill="#FAFAFA"  d="M0,60 l100,0 0,40 -100,0z" ></path>
+	<path stroke="none" fill="#E1E1E1"  d="M0,55 l100,0 0,45z" ></path>
+	<path stroke="none" fill="#C8C8C8"  d="M0,45 l100,0 -100,50z" ></path>
+	<path stroke="none" fill="#969696"  d="M0,40 l100,0 0,40z" ></path>
+	<path stroke="none" fill="#AFAFAF"  d="M0,25 l100,0 -100,55z" ></path>
+	<path stroke="none" fill="#7D7D7D"  d="M0,20 l100,0 0,35z" ></path>
+	<path stroke="none" fill="#646464"  d="M0,0 l100,0 -100,50z" ></path>
+	<path stroke="none" fill="#4B4B4B"  d="M0,0 l100,0 0,40z" ></path>
+	<path stroke="none" fill="#323232"  d="M0,0 l100,0 -100,30z" ></path>
+	<path stroke="none" fill="#191919"  d="M0,0 l100,0 0,20z" ></path>
+  </g>
+</svg>

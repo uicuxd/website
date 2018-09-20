@@ -1,0 +1,115 @@
+<svg fill="none" font-family="DejaVu Sans Mono, Source code variable, monospace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewBox="-150 -150 900 900">
+  
+  <title>pure SVG animation. Our Offer</title>
+  <desc>Author: Shakiba Moshiri. MIT License. Have been created for uicuxd.ir. More SVG: https/github.com/k-five/pure-svg-animation</desc>
+  
+  <!-- define two grids -->
+  <defs>
+	<pattern id="grid100" x="0" y="0" width="16.66%" height="16.66%">
+	  <path fill="none" stroke="#CCC" stroke-width="5" d="M0,100 100,100 100,0" />
+	</pattern>
+  </defs>
+  <defs>
+	<pattern id="grid25" x="0" y="0" width="4.16%" height="4.16%">
+	  <path fill="none" stroke="#CCC " stroke-width="1" d="M0,25 25,25 25,0" />
+	</pattern>
+  </defs>
+  
+  <!-- draw grids only for development -->
+  <!--
+	  <rect  x="0" y="0" width="600" height="600" fill="url(#grid25)"> 
+	  </rect> 
+	  <rect  x="0" y="0" stroke="#CCC" stroke-width="5" width="600" height="600" fill="url(#grid100)"> 
+	  </rect> 
+  -->
+  
+  <!-- simulate background -->
+  <rect x="0" y="0" width="600" height="600" fill="#434343"></rect>
+  
+  <g id="ui-code" >
+	<path id="honeycomb" stroke="#FFF" stroke-width="2px" stroke-dasharray="588" stroke-dashoffset="588" file="none" d="M102,90 l90-48 90,48 0,90 -90,48 -90,-48z">
+	  <animate  begin="play.click" attributeType="auto" attributeName="stroke-dashoffset" to="0" dur="3s" fill="freeze" />
+	</path>
+	<text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="190" y="145" font-size="20">UI Code
+	<animate id="show_text_2" begin="show_text_1.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+  </text>
+</g>
+
+<g id="ui-code-review">
+  <path stroke="#FFF" stroke-width="2px" stroke-dasharray="588" stroke-dashoffset="588"  file="none" d="M302,90 l90-48 90,48 0,90 -90,48 -90,-48z">
+	<animate  begin="play.click" attributeType="auto" attributeName="stroke-dashoffset" to="0" dur="3s" fill="freeze" />
+  </path>
+  <text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="390" y="130" font-size="20">UI Code
+  <animate id="show_text_3" begin="show_text_2.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+<text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="390" y="160" font-size="20">Review
+<animate begin="show_text_2.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+</g>
+
+<g id="ux-design">
+  <path stroke="#FFF" stroke-width="2px" stroke-dasharray="588" stroke-dashoffset="588"  file="none" d="M2,250 l90-48 90,48 0,90 -90,48 -90,-48z">
+	<animate  begin="play.click" attributeType="auto" attributeName="stroke-dashoffset" to="0" dur="3s" fill="freeze" />
+  </path>
+  <text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="90" y="300" font-size="20">UX Design
+  <animate id="show_text_4" begin="show_text_3.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+</g>
+
+<g id="services">
+  <path stroke="#FF0" stroke-width="2px" stroke-dasharray="588" stroke-dashoffset="588"  file="none" d="M202,250 l90-48 90,48 0,90 -90,48 -90,-48z">
+	<animate  begin="play.click" attributeType="auto" attributeName="stroke-dashoffset" to="0" dur="3s" fill="freeze" />
+  </path>
+  <text  fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="290" y="300" font-size="20">Services
+  <animate id="show_text_1" begin="play.click+3s" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+
+</g>
+
+<g id="ux-design-review">
+  <path stroke="#FFF" stroke-width="2px" stroke-dasharray="588" stroke-dashoffset="588"  file="none" d="M402,250 l90-48 90,48 0,90 -90,48 -90,-48z">
+	<animate  begin="play.click" attributeType="auto" attributeName="stroke-dashoffset" to="0" dur="3s" fill="freeze" />
+  </path>
+  <text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="490" y="290" font-size="20">UX Design
+  <animate id="show_text_5" begin="show_text_4.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+<text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="490" y="320" font-size="20">Review
+<animate begin="show_text_4.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+</g>
+
+<g id="training">
+  <path stroke="#FFF" stroke-width="2px" stroke-dasharray="588" stroke-dashoffset="588"  file="none" d="M102,410 l90-48 90,48 0,90 -90,48 -90,-48z">
+	<animate  begin="play.click" attributeType="auto" attributeName="stroke-dashoffset" to="0" dur="3s" fill="freeze" />
+  </path>
+  <text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="190" y="460" font-size="20">Training
+  <animate id="show_text_6" begin="show_text_5.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+</g>
+
+<g id="consultancy">
+  <path stroke="#FFF" stroke-width="2px" stroke-dasharray="588" stroke-dashoffset="588"  file="none" d="M302,410 l90-48 90,48 0,90 -90,48 -90,-48z">
+	<animate  begin="play.click" attributeType="auto" attributeName="stroke-dashoffset" to="0" dur="3s" fill="freeze" />
+  </path>
+  <text fill="#FFF" fill-opacity="0" visibility="visible" text-anchor="middle" x="390" y="460" font-size="20">Consultancy
+  <animate id="show_text_7" begin="show_text_6.end" attributeType="auto" attributeName="fill-opacity" to="1" dur="1s" fill="freeze" />
+</text>
+</g>
+
+<!-- play button to start the animation -->
+<g id="play" fill="#434343">
+  <path id="play-button" stroke="#FF0" stroke-width="3" stroke-dasharray="0" stroke-dashoffset="113" d="M15,520 l30,20 -30,20z">
+	<!--
+		<animate attributeType="XML" attributeName="fill" begin="mouseover"  to="#0FF" dur="200ms" fill="freeze" />
+		<animate attributeType="XML" attributeName="fill" begin="mouseout" to="#FF0" dur="200ms" fill="freeze" />
+	-->
+	<animate begin="play.click" attributeType="auto" attributeName="stroke-dasharray" to="113" dur="10s" fill="freeze" />
+	<animate begin="show_text_7.end" attributeType="auto" attributeName="stroke-dasharray" to="0" dur="500ms" fill="freeze" />
+  </path>
+  <set begin="mouseover" attributeType="auto" attributeName="cursor" to="pointer" />
+  <text fill="#FFF" x="10" y="580" font-size="20">play</text>
+</g>
+
+<!--  end of the svg -->
+</svg>

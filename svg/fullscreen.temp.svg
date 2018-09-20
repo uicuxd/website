@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none">
+  <path stroke="none" fill="#4B4B4B" fill-rule="evenodd" d="M0,0 200,0 200,200 0,200z M30,20 q20,-20 40,0    q20,-20 40,0    q20,30 -40,70    q-60,-40 -40,-70" ></path>
+
+  <defs>
+	<pattern id="grid10" x="0" y="0" width="5%" height="10%">
+	  <path fill="none" stroke="#FFF" stroke-width="0.5" d="M0,10 10,10 10,0" />
+	</pattern>
+  </defs>
+  <defs>
+	<pattern id="grid50" x="0" y="0" width="25%" height="50%">
+	  <path fill="none" stroke="#F00" stroke-width="2" d="M0,50 50,50 50,0" />
+	</pattern>
+  </defs>
+  <!--	 <rect  x="0" y="0" width="100%" height="100%" fill="url(#grid50)"></rect>-->
+  <!--	 <rect  x="0" y="0" width="100%" height="100%" fill="url(#grid10)"></rect>-->
+</svg>

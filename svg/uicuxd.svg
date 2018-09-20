@@ -1,0 +1,14 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" width="100px" height="100px">
+  <g>
+    <path fill="#000" d="M5,50 a45,45 0 1,1 90,0 a22.5,22.5 0 1,1 -45,0 a22.5,22.5 0 1,0 -45,0x"></path>
+    <path fill="#FFF" d="M5,50 a45,45 0 1,0 90,0 a22.5,22.5 0 1,1 -45,0 a22.5,22.5 0 0,0 -45,0z"></path>
+  </g>
+  <g>
+    <path fill="#000" d="M15,50 a10,10 0 1,1 0,1z"></path>
+    <text x="23.5" y="53" fill="#FFF" text-anchor="middle" font-size="10">uic</text>
+  </g>
+  <g>
+    <path fill="#FFF" d="M62.5,50 a10,10 0 1,1 0,1z"></path>
+    <text x="72.5" y="53" fill="#000" text-anchor="middle" font-size="10">uxd</text>
+  </g>
+</svg>

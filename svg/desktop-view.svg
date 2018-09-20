@@ -1,0 +1,38 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 150 210" width="300px" height="420px" font-family="monospace">
+  <title>uicuxd.com: desktop-view</title>
+  <desc>Author: Shakiba Moshiri. MIT License. Has been created for uicuxd manually. For more see our github repository.</desc>
+
+  <g>
+	<path id="yin" fill="#000" d="M25,75 a50,50 0 1,1 100,0 a25,25 0 1,1 -50,0 a25,25 0 1,0 -50,0z"></path>
+	<path id="yang" fill="#FFF" d="M25,75 a50,50 0 1,0 100,0 a25,25 0 1,1 -50,0 a25,25 0 0,0 -50,0z"></path>
+  </g>
+  <g id="uic">
+	<path d="M40,75 a10,10 0 1,1 0,1z"></path>
+	<text fill="#FFF" x="50" y="78" text-anchor="middle" font-size="8">uic</text>
+  </g>
+  <g id="uxd">
+	<path fill="#FFF" d="M90,75 a10,10 0 1,1 0,1z"></path>
+	<text x="100" y="78" text-anchor="middle" font-size="8">uxd</text>
+  </g>
+
+  <g fill="#FFF" font-size="10">
+	<path id="text-path" stroke="none" fill="none" d="M20,75 a55 55 0 1,1 0,1z"></path>
+	<text text-anchor="middle">
+	  <textPath xlink:href="#text-path" startOffset="25%" >User Interface Code</textPath>
+	  <textPath xlink:href="#text-path" startOffset="75%" >User Experience Design</textPath>
+	</text>
+  </g>
+
+  <g>
+	<text fill="#FFF" x="75" y="180" text-anchor="middle">uicuxd.com</text>
+	<text fill="#FFF" x="75" y="200" text-anchor="middle">Desktop view</text>
+  </g>
+
+  <defs>
+	<style type="text/css" ><![CDATA[
+	g:nth-of-type(4) { transform-origin: 75px 75px; transition: transform 2000ms ease 50ms; }
+	svg > g:nth-of-type(4) { animation-name: spiner; animation-duration: 3s; animation-iteration-count: 1; animation-timing-function: ease; }
+	@keyframes spiner { to { transform: rotate(360deg); } }
+	]]></style>
+  </defs>
+</svg>

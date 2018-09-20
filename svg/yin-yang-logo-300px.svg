@@ -1,0 +1,17 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="25 25 100 100" width="300px" height="300px" font-family="monospace">
+  <title>uicuxd: yin-yang-logo</title>
+  <desc>Author: Shakiba Moshiri. MIT License. Has been created for uicuxd manually. For more see our github repository.</desc>
+  <!--   <rect x="0" y="0" width="300" height="300" fill="#CCC"></rect> -->
+  <g>
+	<path fill="#000" d="M25,75 a50,50 0 1,1 100,0 a25,25 0 1,1 -50,0 a25,25 0 1,0 -50,0z"></path>
+	<path fill="#FFF" d="M25,75 a50,50 0 1,0 100,0 a25,25 0 1,1 -50,0 a25,25 0 0,0 -50,0z"></path>
+  </g>
+  <g>
+	<path fill="#000" d="M40,75 a10,10 0 1,1 0,1z"></path>
+	<text x="50" y="78" fill="#FFF" text-anchor="middle" font-size="8">uic</text>
+  </g>
+  <g>
+	<path fill="#FFF" d="M90,75 a10,10 0 1,1 0,1z"></path>
+	<text x="100" y="78" fill="#000" text-anchor="middle" font-size="8">uxd</text>
+  </g>
+</svg>

@@ -1,0 +1,375 @@
+/*
+  uicuxd.com desktop view CSS code
+  it handles any screen size bigger than 1024 pixel
+  less than 1025 (=< 1024) is managed by our phone-layout. See the source on our github repository.
+
+  Copyright (C) 2018 Shakiba Moshiri
+*/
+
+@media screen and ( min-width: 1025px ){
+  body#body::after { content: "Desktop view"; left: calc(50% - 6ch); position: absolute; bottom: 10px; color: #FFF; font-family: monospace; z-index: -1; }
+
+  div#phone { display: none; }
+
+  /* decorate links */
+  a:link { color: #FFF; }
+  a:visited { color: #00E1E1; }
+  a:visited:hover { color: #FF0; }
+  a:hover { color: #E1E100; }
+  a:active { color: #FFF; }
+
+  /* all <p> and <li> */
+  p,li { font-size: 125%; }
+  span.name { font-size: initial; }
+  span,h1 {  transition: color 250ms ease 50ms; }
+
+  /* main div for everything on the view-port */
+  div#desktop { overflow: hidden; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #FF0; color: #FFF; margin: 0; padding: 0; border: none; }
+  div#desktop > input#navigation-control[type="checkbox"] {  width: 48px; height: 48px; position: absolute; left: 50px; z-index: 4; opacity: 0.0; border: none; padding: 0; margin: 0; cursor: pointer; }
+  div#desktop > svg#yellow-collapse { position: absolute; left: 50px; z-index: 3; transition: transform 250ms ease 50ms, stroke 250ms ease 50ms; }
+  div#desktop > div#navigation { position: absolute; width: 100%; height: 6%; top: 0px; background-color: #323232;  text-align: center; transition: height 250ms ease 50ms, top 250ms ease 50ms; z-index: 2; margin: 0; padding: 0; border: none; }
+
+  /* navigation */
+  div#navigation > span { color: #FFF; width: 100px; top: 10%; position: relative; display: inline-block; font-weight: bold; line-height: 2em; transition: border-bottom 250ms ease 0ms; border-bottom: 2px #323232 solid; }
+  div#navigation > span:hover { color: #CCC; cursor: pointer; border-bottom: 2px #FF0 solid; }
+  div#navigation > span.active-button { border-bottom: 2px #0FF solid; color: #0FF; }
+  /*div#navigation > span.active-button:hover ~ span{ color: #BBB; }*/
+
+  /* expand-collapse navigation */
+  input#navigation-control:checked+ svg { -webkit-transform: rotate(540deg); -ms-transform: rotate(540deg); transform: rotate(540deg); }
+  input#navigation-control+ svg > path { -webkit-transition: stroke 500ms ease 50ms; -o-transition: stroke 500ms ease 50ms; transition: stroke 500ms ease 50ms; }
+  input#navigation-control:checked+ svg > path { stroke: #0FF;  }
+  input#navigation-control:checked+ svg~ div#navigation { top: -6%; }
+  input#navigation-control:checked~ div#main { height: 100%; top: 0; }
+
+  /* handling fast arrow key */
+  div#desktop > *:not(#main){ -webkit-transition: opacity 250ms ease 50ms, -webkit-transform 250ms ease 50ms; transition: opacity 250ms ease 50ms, -webkit-transform 250ms ease 50ms; -o-transition: transform 250ms ease 50ms, opacity 250ms ease 50ms; transition: transform 250ms ease 50ms, opacity 250ms ease 50ms; transition: transform 250ms ease 50ms, opacity 250ms ease 50ms, -webkit-transform 250ms ease 50ms; margin: 0; padding: 0; border: none;  }
+  div#desktop > input#close-arrow-keys { width: 48px; height: 48px; position: fixed; left: 100px; bottom: 100px; z-index: 5; opacity: 0.0; cursor: pointer; }
+  div#desktop > input#close-arrow-keys:hover~ svg#red-close-button { opacity: 1; }
+  div#desktop > input#toggle-scrollbar:checked+ svg#red-close-button { opacity: 1; }
+  div#desktop > input#toggle-scrollbar {  width: 48px; height: 48px; position: fixed; left: 50px; bottom: 50px; z-index: 5; opacity: 0.0; cursor: pointer; }
+  div#desktop > svg#red-close-button {  width: 48px; height: 48px; position: fixed; left: 100px; bottom: 100px; z-index: 4; opacity: 0; cursor: pointer;  }
+  div#desktop > svg#arrow-keys {  position: fixed; left: 0; bottom: 0; z-index: 4; }
+
+  div#desktop > div#main { overflow: hidden; width: 100%; height: 94%; top: 6%; background-color: #4B4B4B; position: absolute; overflow-x: hidden; -webkit-transition: height 250ms ease 50ms, top 250ms ease 50ms; -o-transition: height 250ms ease 50ms, top 250ms ease 50ms; transition: height 250ms ease 50ms, top 250ms ease 50ms; margin: 0; padding: 0; border: none; }
+
+  /* taking care of narrow screen size when the navigation is going to be to narrow */
+  @media ( max-height: 600px ) {
+      div#desktop > div#navigation { height: 7%; }
+      div#desktop > div#main { height: 93%; top: 7%; }
+      input#navigation-control:checked+ svg~ div#navigation { top: -7%; }
+  }
+  @media ( max-height: 500px ) {
+      div#desktop > div#navigation { height: 8%; }
+      div#desktop > div#main { height: 92%; top: 8%; }
+      input#navigation-control:checked+ svg~ div#navigation { top: -8%; }
+  }
+
+  div#desktop > svg g[id|="arrow-key"] { -webkit-transition: fill 150ms ease 0ms; -o-transition: fill 150ms ease 0ms; transition: fill 150ms ease 0ms; }
+  div#desktop > svg g[id|="arrow-key"] > path { -webkit-transition: stroke 150ms ease 0ms; -o-transition: stroke 150ms ease 0ms; transition: stroke 150ms ease 0ms; }
+  div#desktop > svg g[id|="arrow-key"]:hover { fill: #F00; cursor: pointer; }
+
+  /* managing fast arrow key animation */
+  input#close-arrow-keys:checked { -webkit-transform: translate(-100px,100px); -ms-transform: translate(-100px,100px); transform: translate(-100px,100px); }
+  input#close-arrow-keys:checked+ input { -webkit-transform: translate(-100px,100px); -ms-transform: translate(-100px,100px); transform: translate(-100px,100px); }
+  input#close-arrow-keys:checked~ svg#red-close-button { -webkit-transform: translate(-100px,100px) rotateZ(1845deg); -ms-transform: translate(-100px,100px) rotate(1845deg); transform: translate(-100px,100px) rotateZ(1845deg); }
+  input#close-arrow-keys:checked~ svg#arrow-keys { -webkit-transform: translate(-100px,100px) ; -ms-transform: translate(-100px,100px) ; transform: translate(-100px,100px) ; }
+  input#close-arrow-keys:checked~ svg#red-close-button > g:first-of-type{ fill: #00C800; }
+  input#toggle-scrollbar:checked+ svg#red=close-button { opacity: 1; }
+  input#toggle-scrollbar:checked~ svg#arrow-keys > g#arrow-key-center { fill: #F00; }
+  input#toggle-scrollbar:checked~ div#main > div { width: -webkit-calc(100% + 20px); width: calc(100% + 20px); }
+  input#toggle-scrollbar:hover+ svg+ svg > g:last-of-type > path { stroke: #F00; }
+
+  /* all page inside main */
+  div#main > div[id|="page"] { display: none; position: absolute; width: 100%; height: 100%; overflow-x: hidden; overflow-y: auto; -webkit-transition: width 250ms ease 50ms; -o-transition: width 250ms ease 50ms; transition: width 250ms ease 50ms; }
+  div#main > div[id|="page"].active-page { display: block; }
+  div#main > div[id|="page"] > div[id|="subpage"] > div { max-height: 650px; max-width: 1024px; margin: auto; }
+
+  /* var simple custom scroll bar */
+  div#main > div[id|="page"]::-webkit-scrollbar { width: 17px; }
+  div#main > div[id|="page"]::-webkit-scrollbar-track { background-color: #FFF; }
+  div#main > div[id|="page"]::-webkit-scrollbar-thumb { background-color: #CCC; }
+  div#main > div[id|="page"]::-mz-scrollbar { width: 17px; }
+  div#main > div[id|="page"]::-mz-scrollbar-track { background-color: #FFF; }
+  div#main > div[id|="page"]::-mz-scrollbar-thumb { background-color: #CCC; }
+
+  /* page-1 */
+  div#page-1 { background-color: rgb(220,231,238); }
+  div#page-1 > svg { position: fixed; top: 0; right: 0; bottom: 0; left: 0; margin: auto;  }
+  div#page-1 > div { width: 100%; height: 100%; position: relative; }
+  div#page-1 > div:hover p > span { color: #AFFF00; }
+  div#page-1 > div > div { position: absolute; left: 10%; top: 0; right: 10%; bottom: 0; }
+  div#page-1 > div:not(:nth-of-type(2)) { background-color: #4B4B4B; }
+  div#subpage-1-slide-1 { z-index: 1; }
+  div#subpage-1-slide-1 > div > div { position: absolute; -webkit-transition: -webkit-box-shadow 250ms ease 50ms; transition: -webkit-box-shadow 250ms ease 50ms; -o-transition: box-shadow 250ms ease 50ms; transition: box-shadow 250ms ease 50ms; transition: box-shadow 250ms ease 50ms, -webkit-box-shadow 250ms ease 50ms; }
+  div#subpage-1-slide-1 > div > div:hover { -webkit-box-shadow: 0 0 5px #FFF; box-shadow: 0 0 5px #FFF;  }
+  div#subpage-1-slide-1 > div > div:first-child { top: 2%; right: 40%; bottom: 2%; left: 0; background-color: #323232; padding: 2%; -webkit-box-sizing: border-box; box-sizing: border-box; text-align: justify; }
+  div#subpage-1-slide-1 > div > div:last-child { background-image: url(../img/JakobNielson.jpg); background-position: 0 0; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; top: 2%; bottom: 2%; right: 0; left: 61%; }
+
+  div#subpage-1-slide-2:hover+ svg#our-focus > g#our-focus-body > g > path { -webkit-animation-play-state: running; animation-play-state: running; }
+  div#subpage-1-slide-2+ svg#our-focus:hover > g#our-focus-body > g > path { -webkit-animation-play-state: running; animation-play-state: running; }
+  div#subpage-1-slide-2:hover+ svg#our-focus > g#our-focus-body > g { -webkit-animation-play-state: running; animation-play-state: running; }
+  div#subpage-1-slide-2+ svg#our-focus:hover > g#our-focus-body > g { -webkit-animation-play-state: running; animation-play-state: running; }
+  div#subpage-1-slide-2:hover+ svg#our-focus > g#our-focus-body { -webkit-animation-play-state: running; animation-play-state: running; }
+  div#subpage-1-slide-2+ svg#our-focus:hover > g#our-focus-body { -webkit-animation-play-state: running; animation-play-state: running; }
+
+  /* page-1 fixed background animation */
+  /* It will be seen through slide-2 */
+  @-webkit-keyframes draw-arrow { from { stroke-dashoffset: 490; } to{ stroke-dashoffset: 0; } }
+  @keyframes draw-arrow { from { stroke-dashoffset: 490; } to{ stroke-dashoffset: 0; } }
+  @-webkit-keyframes fill-arrow { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+  @keyframes fill-arrow { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+  @-webkit-keyframes hide-stroke { from { stroke-width: 3; } to { stroke-width: 0; } }
+  @keyframes hide-stroke { from { stroke-width: 3; } to { stroke-width: 0; } }
+  @-webkit-keyframes show-text { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+  @keyframes show-text { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+  @-webkit-keyframes rotate-our-focus { from{ -webkit-transform: rotate(0deg); transform: rotate(0deg); } to{ -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+  @keyframes rotate-our-focus { from{ -webkit-transform: rotate(0deg); transform: rotate(0deg); } to{ -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+  svg#our-focus > g#our-focus-body > g > path { -webkit-animation-play-state: paused; animation-play-state: paused; -webkit-animation-name: draw-arrow, hide-stroke; animation-name: draw-arrow, hide-stroke;  -webkit-animation-duration: 5s, 1s;  animation-duration: 5s, 1s; -webkit-animation-delay: 0s, 11s; animation-delay: 0s, 11s; -webkit-animation-fill-mode: forwards, forwards; animation-fill-mode: forwards, forwards; -webkit-animation-timing-function: linear, linear; animation-timing-function: linear, linear; }
+
+  svg#our-focus > g#our-focus-body > g { -webkit-animation-play-state: paused; animation-play-state: paused; -webkit-animation-name: fill-arrow; animation-name: fill-arrow; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-timing-function: linear; animation-timing-function: linear; }
+  svg#our-focus > g#our-focus-body > g:nth-of-type(1) { -webkit-animation-delay: 7s; animation-delay: 7s; }
+  svg#our-focus > g#our-focus-body > g:nth-of-type(2) { -webkit-animation-delay: 8s; animation-delay: 8s; }
+  svg#our-focus > g#our-focus-body > g:nth-of-type(3) { -webkit-animation-delay: 9s; animation-delay: 9s; }
+  svg#our-focus > g#our-focus-body > g:nth-of-type(4) { -webkit-animation-delay: 10s; animation-delay: 10s }
+  svg#our-focus > g#our-focus-body > g:nth-of-type(5) { -webkit-animation-delay: 12s; animation-delay: 12s; }
+
+  svg#our-focus > g#our-focus-body { transform-origin: 200px 200px; animation-play-state: paused; animation-name: rotate-our-focus; animation-iteration-count: infinite; animation-duration: 10s; animation-delay: 13s; animation-fill-mode: forwards; animation-timing-function: linear; }
+
+  div#subpage-1-slide-2 { background-image: url(../svg/subpage-1-slide-2.svg); background-repeat: no-repeat; transition: opacity 250ms ease 40ms; z-index: 1;  }
+  @supports ( -moz-transform: scale(0) ) { div#subpage-1-slide-2 { background-size: 100% 100%; } }
+
+  div#subpage-1-slide-3 > div { position: absolute; left: 10%; top: 0; right: 10%; bottom: 0; }
+  div#subpage-1-slide-3 > div > div { position: absolute; transition: box-shadow 250ms ease 50ms; }
+  div#subpage-1-slide-3 > div > div:hover { -webkit-box-shadow: 0 0 5px #FFF; box-shadow: 0 0 5px #FFF;  }
+  div#subpage-1-slide-3 > div > div:first-child { top: 2%; right: 61%; bottom: 2%; left: 0; background-image: url(../img/frontend-bg-white.png); background-position: 50% 50%; background-size: 100% 100%; background-repeat: no-repeat; background-color: #FFF; }
+  div#subpage-1-slide-3 > div > div:last-child { background-color: #323232; top: 2%; bottom: 2%; right: 0; left: 40%;padding: 2%; box-sizing: border-box; text-align: justify; }
+
+  div#subpage-1-slide-4 {  position: relative; font-family: "DejaVu Sans Mono", "Source code variable", monospace; min-height: 600px; }
+  div#subpage-1-slide-4 > div#container-our-service { width: 600px; height: 600px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
+
+  div#container-our-service { width: 600px; height: 600px; position: relative; }
+  div#container-our-service > input { width: 100px; height: 100px; position: absolute; bottom: 0; left; 0; opacity: 0.0; margin: 0; padding: 0; border: none; }
+  div#container-our-service > input:hover { cursor: pointer; }
+  div#container-our-service > svg > g:not(#play) { fill: #4B4B4B; }
+  div#container-our-service > svg > g:not(#services):not(#play) > path { stroke: #FFF; stroke-width: 2px; }
+  div#container-our-service > svg > g > text { font-size: 30px; fill: #FFF; fill-opacity: 0;  text-anchor: middle; }
+  input#play-our-service:checked { display: none; }
+  input#play-our-service:checked+ svg > g:not(#play):hover { fill: #323232; cursor: crosshair; }
+  input#play-our-service:checked+ svg > g:not(#play):not(#XXX):hover > path { stroke: #AFFF00;  }
+  input#play-our-service:checked+ svg > g > path { animation-name: draw-honeycomb; }
+  input#play-our-service:checked+ svg > g > text { animation-name: show-text; }
+  input#play-our-service:checked+ svg > g > path#play-button{ animation-name: show-play; }
+  input#play-our-service:checked+ svg > g > path#progress-bar { animation-name: draw-progress-bar; }
+
+  @-webkit-keyframes draw-progress-bar { from{ stroke-dashoffset: 580; } to{ stroke-dashoffset: 0; } }
+  @keyframes draw-progress-bar { from{ stroke-dashoffset: 580; } to{ stroke-dashoffset: 0; } }
+  @-webkit-keyframes draw-honeycomb { from{ stroke-dashoffset: 588; } to{ stroke-dashoffset: 0; } }
+  @keyframes draw-honeycomb { from{ stroke-dashoffset: 588; } to{ stroke-dashoffset: 0; } }
+  @-webkit-keyframes show-text { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+  @keyframes show-text { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+  @-webkit-keyframes show-play { from{ stroke-dasharray: 0; } to{ stroke-dasharray: 113; } }
+  @keyframes show-play { from{ stroke-dasharray: 0; } to{ stroke-dasharray: 113; } }
+  svg#our-service > g { -webkit-transition: fill 250ms ease 50ms; -o-transition: fill 250ms ease 50ms; transition: fill 250ms ease 50ms;  }
+  svg#our-service > g > path { -webkit-transition: stroke 250ms ease 50ms; -o-transition: stroke 250ms ease 50ms; transition: stroke 250ms ease 50ms;  }
+  svg#our-service > g > path#progress-bar { -webkit-animation-duration: 11s; animation-duration: 11s; -webkit-animation-timing-function: linear; animation-timing-function: linear; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; }
+  svg#our-service > g > path#play-button { -webkit-animation-duration: 11s; animation-duration: 11s; -webkit-animation-timing-function: linear; animation-timing-function: linear; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; }
+  svg#our-service > g > path { -webkit-animation-duration: 3s; animation-duration: 3s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-timing-function: linear; animation-timing-function: linear; }
+
+  svg#our-service > g > text { -webkit-animation-duration: 1s; animation-duration: 1s;-webkit-animation-fill-mode: forwards;animation-fill-mode: forwards; -webkit-animation-timing-function: linear; animation-timing-function: linear; }
+  svg#our-service > g:nth-of-type(4) > text { -webkit-animation-delay: 3s; animation-delay: 3s; }
+  svg#our-service > g:nth-of-type(1) > text { -webkit-animation-delay: 4s; animation-delay: 4s; }
+  svg#our-service > g:nth-of-type(2) > text { -webkit-animation-delay: 5s; animation-delay: 5s; }
+  svg#our-service > g:nth-of-type(3) > text { -webkit-animation-delay: 6s; animation-delay: 6s; }
+  svg#our-service > g:nth-of-type(5) > text { -webkit-animation-delay: 7s; animation-delay: 7s; }
+  svg#our-service > g:nth-of-type(6) > text { -webkit-animation-delay: 8s; animation-delay: 8s; }
+  svg#our-service > g:nth-of-type(7) > text { -webkit-animation-delay: 9s; animation-delay: 9s; }
+
+  /* page-2 : UXD */
+  div#page-2 { background-image: url(../img/ux-honeycomb-morville-min.png); background-position: 50% 50%; -webkit-background-size: 100% 110%; background-size: 100% 110%; background-repeat: no-repeat; background-color: rgb(220,231,238); }
+  div#page-2 > div { width: 100%; height: 100%; position: relative;  }
+  div#page-2 > div:hover > div p > span { color: #AFFF00; }
+  div#page-2 > div:hover > div li > span { color: #AFFF00; }
+  div#page-2 > div:hover > div > h1 > span { color: #F00; }
+  div#page-2 > div#subpage-2-slide-3:hover > div > h1 > span { color: #AFFF00; }
+  div#page-2 > div > div > div:first-of-type { left: 5px; padding: 1%; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #323232; text-align: justify; -webkit-transition: -webkit-transform 1000ms ease 100ms; transition: -webkit-transform 1000ms ease 100ms; -o-transition: transform 1000ms ease 100ms; transition: transform 1000ms ease 100ms; transition: transform 1000ms ease 100ms, -webkit-transform 1000ms ease 100ms; }
+  div#page-2 > div > div > div:first-of-type:hover { z-index: 1;  }
+  div#page-2 > div > div > div:first-of-type::after { content: ""; width: 1px; height: 100%; position: absolute; bottom: 0; left: 0; background-color: #CCC; }
+  div#page-2 > div:hover > div > div:first-of-type::after { height: 0; -webkit-transition: height 15s linear 0ms; -o-transition: height 15s linear 0ms; transition: height 15s linear 0ms; }
+  div#page-2 > div:hover > div > div:first-of-type { -webkit-transform:  translateY(10%); -ms-transform:  translateY(10%); transform:  translateY(10%); }
+  div#page-2 > div > div > div:last-of-type { right: 2%; bottom: 0; -webkit-transition: -webkit-transform 1000ms ease 100ms; transition: -webkit-transform 1000ms ease 100ms; -o-transition: transform 1000ms ease 100ms; transition: transform 1000ms ease 100ms; transition: transform 1000ms ease 100ms, -webkit-transform 1000ms ease 100ms;}
+  div#page-2 > div:hover > div > div:last-of-type { -webkit-transform:  translateY(-10%); -ms-transform:  translateY(-10%); transform:  translateY(-10%); }
+
+  div[id|="subpage-2-slide"]:not(:nth-of-type(2)):not(:nth-of-type(3)) { background-color: #4B4B4B; }
+  div[id|="subpage-2-slide"] > div { position: absolute; left: 10%; top: 0; right: 10%; bottom: 0;}
+  div[id|="subpage-2-slide"]:not(:last-child) > div > div { position: absolute; }
+  div[id|="subpage-2-slide"]:not(:last-child) > div > div:first-of-type { width: 50%; height: 50%; background-color: #323232;  }
+  div[id|="subpage-2-slide"]:not(:last-child) > div > div:last-of-type { bottom: 0; right: 0; width: 50%; height: 50%; }
+
+  /* fallback for min-max */
+  /* border-right: 30px transparent solid; border-bottom: 30px transparent solid; */
+  div.puzzle-mismatch > div,
+  div.puzzle-match > div { position: absolute; width: 33.33%; height: 50%; max-width: -webkit-calc(33.33% - 5px); max-width: calc(33.33% - 5px); max-height: -webkit-calc(50% - 5px); max-height: calc(50% - 5px); -webkit-transition: -webkit-box-shadow 250ms ease 50ms; transition: -webkit-box-shadow 250ms ease 50ms; -o-transition: box-shadow 250ms ease 50ms; transition: box-shadow 250ms ease 50ms; transition: box-shadow 250ms ease 50ms, -webkit-box-shadow 250ms ease 50ms;  -webkit-box-sizing: border-box;  box-sizing: border-box; -webkit-background-size: 300% 200%; background-size: 300% 200%; background-repeat: no-repeat; background-color: #FFF; }
+  div.puzzle-mismatch > div,
+  div.puzzle-match > div { font-size: x-large; color: #000;  }
+  div.puzzle-mismatch > div:hover,
+  div.puzzle-match > div:hover { -webkit-box-shadow: 0 0 25px #FFF; box-shadow: 0 0 25px #FFF;  }
+
+  div.puzzle-mismatch > div:nth-child(1) { top: 50%; right: 66.66%; background-image: url(../img/ux-min.png); background-position: 0 0; }
+  div.puzzle-mismatch > div:nth-child(2) { right: 66.66%;           background-image: url(../img/ux-min.png); background-position: 50% 0; }
+  div.puzzle-mismatch > div:nth-child(3) { top: 50%; right: 0;      background-image: url(../img/ux-min.png); background-position: 100% 0; }
+  div.puzzle-mismatch > div:nth-child(4) { right: 33.33%;           background-image: url(../img/ux-min.png); background-position: 0 100%; }
+  div.puzzle-mismatch > div:nth-child(5) { right: 0;                background-image: url(../img/ux-min.png); background-position: 50% 100%; }
+  div.puzzle-mismatch > div:nth-child(6) { top: 50%; right: 33.33%; background-image: url(../img/ux-min.png); background-position: 100% 100%; }
+
+  div.puzzle-match > div:nth-child(1) { right: 66.66%;           background-image: url(../img/ux-min.png); background-position: 0 0; }
+  div.puzzle-match > div:nth-child(2) { right: 33.33%;           background-image: url(../img/ux-min.png); background-position: 50% 0; }
+  div.puzzle-match > div:nth-child(3) { right: 0;                background-image: url(../img/ux-min.png); background-position: 100% 0; }
+  div.puzzle-match > div:nth-child(4) { top: 50%; right: 66.66%; background-image: url(../img/ux-min.png); background-position: 0 100%; }
+  div.puzzle-match > div:nth-child(5) { top: 50%; right: 33.33%; background-image: url(../img/ux-min.png); background-position: 50% 100%; }
+  div.puzzle-match > div:nth-child(6) { top: 50%; right: 0%;     background-image: url(../img/ux-min.png); background-position: 100% 100%; }
+
+  div#subpage-2-slide-2 { background-image: url(../svg/subpage-2-slide-2.svg); background-repeat: no-repeat; }
+  div#subpage-2-slide-3 { background-image: url(../svg/subpage-2-slide-3.svg); background-repeat: no-repeat; }
+  @supports ( -moz-transform: scale(0) ) { div#subpage-2-slide-2, div#subpage-2-slide-3 { background-size: 100% 100%; } }
+  
+  div#subpage-2-slide-3 > div > div:last-of-type { background-image: url(../img/ux-min.png); background-position: 50% 50%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; background-color: #FFF; }
+  div#subpage-2-slide-4 > div > div:last-of-type { background-image: url(../img/human-error-min.jpg); background-position: 50% 50%;-webkit-background-size: 100% 100%;background-size: 100% 100%; background-repeat: no-repeat; background-color: #FFF; }
+  div#subpage-2-slide-4 { background-color: #4B4B4B; }
+  div#subpage-2-slide-5 { background-color: #4B4B4B; }
+  div#subpage-2-slide-6 > div  { text-align: center; }
+  div#subpage-2-slide-6 > div > span { font-family: "IndieFlower"; font-size: 400%; }
+  div#subpage-2-slide-6 > div > span > span { color: #FF0; }
+  div#subpage-2-slide-9 > div > svg,
+  div#subpage-2-slide-10 > div > svg { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+  /* page-3 : front-end */
+  div#page-3 { background-image: url(../img/code-js-min-min.jpg); background-position: 50% 50%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; background-color: rgb(220,231,238);  }
+  div#page-3 > div { height: 100%;  position: relative; background-color: #4B4B4B; }
+  div#page-3 > div > div { position: absolute; top: 0; bottom: 0; left: 10%; right: 10%; }
+  div#page-3 > div:hover > div p > span { color: #AFFF00; }
+  div#page-3 > div:hover > div li > span { color: #AFFF00; }
+  div#page-3 > div:nth-child(2) { background-image: url(../svg/subpage-3-slide-2.svg); background-repeat: no-repeat; background-color: transparent; }
+  div#page-3 > div:nth-child(3) { background-image: url(../svg/subpage-3-slide-3.svg); background-repeat: no-repeat; background-color: transparent; }
+  @supports ( -moz-transform: scale(0) ) { div#page-3 > div:nth-child(2), div#page-3 > div:nth-child(3) { background-size: 100% 100%; } }
+  
+  div#page-3 > div:nth-child(2) span#adobe-clock-time { display: block; width: 150px; height: 150px; background-image: url(../svg/adobe-clock-time.svg); background-position: 50% 50%;-webkit-background-size: 100% 100%;background-size: 100% 100%; background-repeat: no-repeat; }
+  div#page-3 > div:nth-child(3) span#ours-clock-time { display: block; width: 150px; height: 150px; background-image: url(../svg/ours-clock-time.svg); background-position: 50% 50%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+  div#subpage-3-slide-5:hover span.cascade-letter { color: #AFFF00; }
+  div#subpage-3-slide-6 > div  { text-align: center; }
+  div#subpage-3-slide-6 > div > span { font-family: "IndieFlower"; font-size: 400%; }
+  div#subpage-3-slide-6 > div > span > span { color: #FF0; }
+
+  /* page 04: project */
+  div#page-4 { background-image: url(../img/next-step-min.jpg); background-position: 50% 50%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; background-color: rgb(220,231,238);  }
+  div#page-4 > div > div { position: absolute; top: 0; bottom: 0; left: 10%; right: 10%; }
+  div#page-4 > div > div:hover > div:hover { -webkit-box-shadow: 0 0 5px #FFF; box-shadow: 0 0 5px #FFF; z-index: 3; }
+  div#page-4 > div > div:hover > div:hover h1 > span { color: #AFFF00; }
+  /* width: calc(50% - 5px);   height: calc(50% - 20px); */
+  div#page-4 > div > div:nth-child(1) > div { position: absolute; width: 50%; height: 50%;  padding: 10px; box-sizing: border-box; background-color: #323232; transition: box-shadow 250ms ease 50ms; }
+  div#page-4 > div > div:nth-child(1) > div:first-child { left: 0; top: 10px; }
+  div#page-4 > div > div:nth-child(1) > div:nth-child(2) { right: 25%; top: 25%; }
+  div#page-4 > div > div:nth-child(1) > div:last-child { right: 0; bottom: 10px; }
+  div#subpage-4-slide-1 { height: 100%;  background-image: url(../svg/subpage-4-slide-1.svg); background-repeat: no-repeat; }
+  @supports ( -moz-transform: scale(0) ) { div#subpage-4-slide-1 { background-size: 100% 100%; } }
+  
+  div#page-4 > div#subpage-4-slide-1+ div { height: 0; -webkit-transition: height 250ms ease 250ms; -o-transition: height 250ms ease 250ms; transition: height 250ms ease 250ms; }
+  div#page-4:hover > div#subpage-4-slide-2 { height: 100%; }
+  div#page-4 > div#subpage-4-slide-2:hover+ div { height: 100%; }
+
+  /* page 05: contact-us */
+  div#page-5 { background-color: rgb(220,231,238);  }
+  div#page-5 > svg { position: fixed; }
+  div#page-5 > div { position: relative; /* min-height: 600px; does not let cascade-collapsing */ height: 100%; }
+  div#page-5 > div > div { position: absolute; left: 10%; top: 0; right: 10%; bottom: 0; }
+
+  /* form, table, and inputs */
+  div#page-5 input { width: 100%; padding: 5px; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px #FFF solid; }
+  div#page-5 form textarea { padding: 5px; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  div#page-5 table { display: table; table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0 20px; }
+  div#page-5 table tr td { font-size: larger; padding: 10px 0 10px 10px; border-bottom: 1px #FF0 solid; }
+  div#page-5 table tr td:first-child { border-left: 10px #FF0 solid; }
+  div#page-5 table tr:nth-child(5) td:first-child { border-left: 10px #0FF solid; border-bottom: 1px #0FF solid; cursor: pointer }
+  div#page-5 table tr:nth-child(5) td:first-child input { cursor: pointer; border-style: outset; }
+  div#page-5 table tr:nth-child(5) td:last-child { border: none; color: #FFF; }
+  div#page-5 table tr td#form-error { -webkit-animation-name: fade_in_out; animation-name: fade_in_out; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-timing-function: step-start; animation-timing-function: step-start; }
+  @-webkit-keyframes fade_in_out { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes fade_in_out { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+  div#page-5 table tr:last-of-type td { border: none; }
+
+  div#subpage-5-slide-1 { background-color: #4B4B4B; height: 100%; min-height: 600px; overflow: hidden; }
+  div#subpage-5-slide-1 td#send-form > input { cursor: pointer; background-color: #FFF; font-weight: bold; }
+  div#subpage-5-slide-1 > div > div { position: absolute;  }
+  div#subpage-5-slide-1 > div > div:first-child { top: 0; bottom: 0; left: 0; right: 50%;  }
+  div#subpage-5-slide-1 > div > div:last-child { top: 0; bottom: 0; left: 50%; right: 0;  }
+  /* thank you photo */
+  div#subpage-5-slide-2 { background-image: url( ../svg/subpage-5-slide-2.svg ); background-repeat: no-repeat; }
+  @supports ( -moz-transform: scale(0) ) { div#subpage-5-slide-2 { background-size: 100% 100%; } }
+  
+  div#subpage-5-slide-3 { background-color: #4B4B4B; overflow: hidden; }
+  div#subpage-5-slide-3:hover p > span { color: #AFFF00; }
+  div#subpage-5-slide-3 > div { height: 100%;  }
+  div#subpage-5-slide-3 > div > div[id*="Person"] { position: absolute;  }
+
+  div[id|="Person"] {left: 0; width: 150px; height: 150px; background-image: url(../svg/picture-frame.svg); background-position: 50% 50%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; opacity: 0.6; -webkit-transition: opacity 250ms ease 50ms, -webkit-transform 250ms ease 50ms; transition: opacity 250ms ease 50ms, -webkit-transform 250ms ease 50ms; -o-transition: opacity 250ms ease 50ms, transform 250ms ease 50ms; transition: opacity 250ms ease 50ms, transform 250ms ease 50ms; transition: opacity 250ms ease 50ms, transform 250ms ease 50ms, -webkit-transform 250ms ease 50ms; }
+  div#subpage-5-slide-3:hover div[id|="Person"] { opacity: 1;  }
+  div[id|="Person"]:hover { -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
+  div[id|="Info-Person"] { left: 200px; padding: 20px; -webkit-box-sizing: border-box; box-sizing: border-box; color: #FFF; height: 150px; }
+  div[id*="Person-1"] { top: 0; }
+  div[id*="Person-2"] { top: 150px; }
+  div[id*="Person-3"] { top: 300px; }
+  div#Person-1 { background-image: url(../svg/picture-frame.svg), url(../img/shakiba-1.jpg); background-position: 50% 50%, 50% 50%; -webkit-background-size: 100% 100%, 90% 90%; background-size: 100% 100%, 90% 90%; background-repeat: no-repeat, no-repeat;  }
+
+  /* page 06: about us */
+  div#page-6 { background-color: rgb(220,231,238); }
+  div#page-6 > div { height: 100%; position: relative; z-index: 1; }
+  div#page-6 > div[id|="subpage"]:not(:nth-of-type(2)) { background-color: #4B4B4B; }
+  div#subpage-6-slide-2+ div { position: fixed; top: 20%; bottom: 20%; left: 10%; right: 10%;  color: #000; background-color: transparent; z-index: 0; }
+  div#subpage-6-slide-2:hover+ div span.cascade-letter { color: #F00; }
+  div#subpage-6-slide-2+ div > div { max-height: 650px; max-width: 1024px; margin: auto; }
+  div#page-6 > div:hover p > span.cascade-letter { color: #AFFF00; }
+  div#page-6 > div p > span:not(.cascade-letter) { font-weight: bold; }
+  div#page-6 > div > div { position: absolute; left: 10%; top: 0; right: 10%; bottom: 0; }
+  div#page-6 > div#subpage-6-slide-2 { background-image: url( ../svg/subpage-6-slide-2.svg); background-repeat: no-repeat; background-color: transparent; }
+  @supports ( -moz-transform: scale(0) ) { div#page-6 > div#subpage-6-slide-2 { background-size: 100% 100%; } }
+  
+  /* background-size: X X; on Firefox has different result than -webkit- based */
+  div#subpage-6-slide-3 > div > svg { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+  /* exploiting CSS transition to get pleasant effect on text */
+  /* perl -le 'print ".cascade-letter > span:nth-child(", $_, ") { transition: color 75ms ease ",$_*50,"ms; }" for 1..20' */
+  .cascade-letter:hover { color: #CCC; }
+  .cascade-letter > span:nth-child(1) { -webkit-transition: color 75ms ease 50ms; -o-transition: color 75ms ease 50ms; transition: color 75ms ease 50ms; }
+  .cascade-letter > span:nth-child(2) { -webkit-transition: color 75ms ease 100ms; -o-transition: color 75ms ease 100ms; transition: color 75ms ease 100ms; }
+  .cascade-letter > span:nth-child(3) { -webkit-transition: color 75ms ease 150ms; -o-transition: color 75ms ease 150ms; transition: color 75ms ease 150ms; }
+  .cascade-letter > span:nth-child(4) { -webkit-transition: color 75ms ease 200ms; -o-transition: color 75ms ease 200ms; transition: color 75ms ease 200ms; }
+  .cascade-letter > span:nth-child(5) { -webkit-transition: color 75ms ease 250ms; -o-transition: color 75ms ease 250ms; transition: color 75ms ease 250ms; }
+  .cascade-letter > span:nth-child(6) { -webkit-transition: color 75ms ease 300ms; -o-transition: color 75ms ease 300ms; transition: color 75ms ease 300ms; }
+  .cascade-letter > span:nth-child(7) { -webkit-transition: color 75ms ease 350ms; -o-transition: color 75ms ease 350ms; transition: color 75ms ease 350ms; }
+  .cascade-letter > span:nth-child(8) { -webkit-transition: color 75ms ease 400ms; -o-transition: color 75ms ease 400ms; transition: color 75ms ease 400ms; }
+  .cascade-letter > span:nth-child(9) { -webkit-transition: color 75ms ease 450ms; -o-transition: color 75ms ease 450ms; transition: color 75ms ease 450ms; }
+  .cascade-letter > span:nth-child(10) { -webkit-transition: color 75ms ease 500ms; -o-transition: color 75ms ease 500ms; transition: color 75ms ease 500ms; }
+  .cascade-letter > span:nth-child(11) { -webkit-transition: color 75ms ease 550ms; -o-transition: color 75ms ease 550ms; transition: color 75ms ease 550ms; }
+  .cascade-letter > span:nth-child(12) { -webkit-transition: color 75ms ease 600ms; -o-transition: color 75ms ease 600ms; transition: color 75ms ease 600ms; }
+  .cascade-letter > span:nth-child(13) { -webkit-transition: color 75ms ease 650ms; -o-transition: color 75ms ease 650ms; transition: color 75ms ease 650ms; }
+  .cascade-letter > span:nth-child(14) { -webkit-transition: color 75ms ease 700ms; -o-transition: color 75ms ease 700ms; transition: color 75ms ease 700ms; }
+  .cascade-letter > span:nth-child(15) { -webkit-transition: color 75ms ease 750ms; -o-transition: color 75ms ease 750ms; transition: color 75ms ease 750ms; }
+  .cascade-letter > span:nth-child(16) { -webkit-transition: color 75ms ease 800ms; -o-transition: color 75ms ease 800ms; transition: color 75ms ease 800ms; }
+  .cascade-letter > span:nth-child(17) { -webkit-transition: color 75ms ease 850ms; -o-transition: color 75ms ease 850ms; transition: color 75ms ease 850ms; }
+  .cascade-letter > span:nth-child(18) { -webkit-transition: color 75ms ease 900ms; -o-transition: color 75ms ease 900ms; transition: color 75ms ease 900ms; }
+  .cascade-letter > span:nth-child(19) { -webkit-transition: color 75ms ease 950ms; -o-transition: color 75ms ease 950ms; transition: color 75ms ease 950ms; }
+  .cascade-letter > span:nth-child(20) { -webkit-transition: color 75ms ease 1000ms; -o-transition: color 75ms ease 1000ms; transition: color 75ms ease 1000ms; }
+
+  /* taking care of changing height */
+  @media (max-height: 600px) { html > body{ font-size: 14px; }  }
+  @media (max-height: 550px) { html > body{ font-size: 13px; }  }
+  @media (max-height: 500px) { html > body{ font-size: 12px; }  }
+  @media (max-height: 450px) { html > body{ font-size: 11px; }  }
+
+  /* if screen size was too wide or less than 400px, show "Unexpected Screen Size" error */
+  @media (max-height: 400px), (min-aspect-ratio: 3/1) {
+      div#ERROR { display: block}
+      div#ERROR > div#USS { display: block; }
+      div#ERROR > svg { display: block; }
+  }
+}

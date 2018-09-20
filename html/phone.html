@@ -1,0 +1,490 @@
+<div id="phone">
+  <div id="screen">
+    <input type="checkbox" id="control-navigation">
+    <label for="control-navigation" id="icon-hide-navigation"></label>
+
+    <div id="display">
+
+      <!-- films -->
+      <input type="radio" id="control-app-11" name="app-controller" >
+      <div id="app-11">
+        <h1>user experience design</h1>
+        <div id="subapp-11-slide-1">
+          <div>
+            <video width="100%" height="100%" controls>
+<!--				   <source src="./media/uxd-is-not.mp4" type="video/mp4"> -->
+              <source src="http://g1.asset.aparat.com/flv_video_new/3899/d7a7dfdd15a6b5e2c6860f1c81de0a4f11695954-360p.apt?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjQ1NzNiNDhiYjE2OWJlNDg2Y2QyZjllODQzNjNhNWQ4IiwiZXhwIjoxNTM1NzYwMTQzLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.6TxaoZqMnkuyqlBPlzlwCON0gFuFEfroBlfn89D4o0s" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <h1>yak-film</h1>
+        <div id="subapp-11-slide-2">
+          <div>
+            <video width="100%" height="100%" controls>
+<!--				   <source src="./media/yak-films.mp4" type="video/mp4"> -->
+              <source src="http://g1.asset.aparat.com/flv_video_new/3899/410685c4a516144474a85aaecb374f0511695701-360p.apt?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImYxYzQ2ODI2NzgzZjgzYjkwOGRkNWQ2NGVlZjZkYTE2IiwiZXhwIjoxNTM1NjcxMTY3LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.sdA6Qyk5YTMm71LyzsRnRHht7sOHpcHIgtqgE2epDIA" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- end of app-11 -->
+
+      <!-- music player it will be empty with no content -->
+      <div id="app-10"></div>
+
+      <!-- copyright -->
+      <input type="radio" id="control-app-9" name="app-controller" >
+      <div id="app-9">
+        <div id="subapp-9-slide-1">
+          <div></div>
+        </div>
+        <div id="subapp-9-slide-2">
+          <div>
+            <h1>Copyright &amp; Disclaimer</h1>
+            <p>None of the background images belong to us (in Desktop view).</p>
+            <p>The two fonts "Signika-Regular.ttf" and "IndieFlower.ttf" are under Open-License-Font available on <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a></p>
+            <p>some of SVG icons have been used for response design (in Phone view) belong to <a href="https://icons8.com/" target="_blank">icons8.com</a>.</p>
+            <p>Other SVG icons, SVG animations, and SVG layouts are the property of <span>uicuxd.com</span>.</p>
+            <p>For code highlighting <a href="https://prismjs.com/" target="_blank">prismjs.com</a> has been used.</p>
+            <span class="name" style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;">Copyright &copy; 2018 uicuxd.com</span>
+          </div>
+        </div>
+      </div>
+      <!-- end of app-9 copyright -->
+
+      <!-- email -->
+      <input type="radio" id="control-app-8" name="app-controller" >
+      <div id="app-8">
+        <div id="subapp-8-slide-1">
+          <div>
+            <h1>Email Now</h1>
+            <form id="phone-form" name="emailUs" action="./php/process_email_us.php" method="POST">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Name</td>
+                    <td><input name="userName" type="text" placeholder="Name" autocomplete="off" required /></td>
+                  </tr>
+                  <tr>
+                    <td>Email Address</td>
+                    <td><input name="userEmail" type="text" placeholder="Email" autocomplete="off" required /></td>
+                  </tr>
+                  <tr>
+                    <td>Subject</td>
+                    <td><input name="userSubject" type="text" placeholder="Subject" autocomplete="off" required/></td>
+                  </tr>
+                  <tr >
+                    <td colspan="2" ><textarea name="userMessage" id="" cols="30" rows="10" placeholder="Type here ... less than 256 characters." required></textarea></td>
+                  </tr>
+                  <tr>
+                    <td id="send-form"><input id="send-form-button" type="button" value="Send" ></td>
+                    <td id="form-error"></td>
+                  </tr>
+                  <tr>
+                    <td id="send-form-result">&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end of app-8 email -->
+
+      <!-- contact : dialog-box -->
+      <input type="radio" id="control-dialog-box" name="dialog-controller" >
+      <input type="radio" id="control-app-7" name="dialog-controller" >
+      <div id="app-7">
+        <div id="subapp-7-slide-1">
+          <div>
+            <h1>Call Us</h1>
+            <ul>
+              <li>Office: +98 87 3512 6394</li>
+              <li>Email: contact@uicuxd.com</li>
+            </ul>
+            <h1>Follow Us</h1>
+            <ul>
+              <li ><a href="https://github.com/uicuxd" target="_blank">github</a></li>
+              <li ><a href="https://linkedin.com/company/uixuxd" target="_blank">linkedin</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end of app-7 contact -->
+
+      <!-- about us -->
+      <input type="radio" id="control-app-6" name="app-controller" >
+      <div id="app-6">
+        <div id="subapp-6-slide-1">
+          <div>
+            <h1>When</h1>
+            <p><span>uixuxd</span> founded in 2018 by Shakiba Moshiri with the aim of improving the overall quality of websites' and web-applications user <span>experience</span>, specifically their <span>responsive</span> layout in smartphone view.</p>
+            <h1>How</h1>
+            <p>Concentrating on <span>Creativity</span>, <span>Simplicity</span>, and <span>Efficiency</span>.</p>
+            <p>Researching and finding <span>bugs</span> and <span>bad practices</span>.</p>
+            <h1>And</h1>
+            <p>Our code and projects are <span>open source</span>, if you are interested to help, then you are welcome.</p>
+            <h1>So</h1>
+            <p>There is no code with no bugs. <span>Please</span> inform or advise us if you found any.</p>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+        <!-- end of app-6 about us -->
+      </div>
+
+      <!-- project -->
+      <input type="radio" id="control-app-5" name="app-controller" >
+      <div id="app-5">
+        <div id="subapp-5-slide-1">
+          <div>
+            <h1>Have <span>Done</span></h1>
+            <ol>
+              <li>uicuxd <a href="https://github.com/uicuxd/website" target="_blank">website</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="subapp-5-slide-2">
+          <div>
+            <h1>Has been <span>Doing</span></h1>
+            <ol>
+              <li><a href="https://github.com/uicuxd/phonescape" target="_blank">phonescape</a> a new and different responsive design for smartphones.</li>
+            </ol>
+
+          </div>
+        </div>
+        <div id="subapp-5-slide-3">
+          <div>
+            <h1><span>Pending</span></h1>
+            <ol>
+              <li><a href="https://review.uicuxd.com" target="_blank">review</a> websites and web-applications in terms of their UI Code and UX Design.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- end of app-5 project -->
+
+      <!-- services -->
+      <input type="radio" id="control-app-4" name="app-controller" >
+      <div id="app-4">
+        <div id="subapp-4-slide-1">
+          <div>
+            <div><p>Services</p></div>
+            <div><p>UI Code</p></div>
+            <div><p>UI Code Review</p></div>
+            <div><p>UX Design</p></div>
+            <div><p>UX Design Review</p></div>
+            <div><p>Training</p></div>
+            <div><p>Consultancy</p></div>
+          </div>
+        </div>
+        <!-- end of subapp-4-slide-1 -->
+      </div>
+      <!-- end of app-4 -->
+
+      <!-- front end -->
+      <input type="radio" id="control-app-3" name="app-controller" >
+      <div id="app-3" >
+        <div id="subapp-3-slide-1" >
+          <div>
+            <h1>Why Front End</h1>
+            <p>Nowadays:</p>
+            <p>Web Browsers are able to show and run applications with <span>high efficiency</span>.</p>
+            <p>Users <span>expectation</span> is going higher and higher.</p>
+            <p>WC3 has <span>standardized</span> many things and they can be used safely.</p>
+            <p><span>Internet</span> is everywhere. Even very small company or business somehow deals with the web; e.g. having a contact form for receiving emails or feedbacks from customers.</p>
+          </div>
+        </div>
+        <!-- end of subapp-3-slide-1 -->
+
+        <!-- front-end image -->
+        <div id="subapp-3-slide-2">
+          <!-- should be transparent  -->
+          <div></div>
+          <!-- end of subapp-3-slide-2 -->
+        </div>
+        <!-- what we do for front end -->
+
+        <div id="subapp-3-slide-3">
+          <div>
+            <h1>Do You Know?</h1>
+            <h2>Almost always:</h2>
+            <ul>
+              <li>There is a big difference between what we <span>want</span> and what we really <span>need</span>.</li>
+              <li>Also there is a big difference between <span>better</span> solution and <span>different</span> solution.</li>
+            </ul>
+            <h2>Usually:</h2>
+            <ul>
+              <li>"Better" <span>progresses</span> the game, whereas "different" <span>changes</span> the game.</li>
+            </ul>
+            <h2>And Maybe:</h2>
+            <ul>
+              <li>For new or small startup / business; we no longer need a separate <span>Android</span>, <span>iOS</span>, <span>Window phone</span>, etc application!</li>
+            </ul>
+          </div>
+        </div>
+        <!-- end of subpage-3-slide-5 -->
+
+        <div id="subapp-3-slide-4">
+          <div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>Defeat <span>complexity</span> with,</p>
+                    <p><span>creativity</span> and <span>simplicity</span>.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of subpage-3-slide-6 -->
+
+        <div id="subapp-3-slide-5">
+          <div>
+            <h1>Try Our Smart-Phone layout</h1>
+            <h2>Creative</h2>
+            <ul>
+              <li>100% pure and standard CSS; no scripting language in the main skeleton.</li>
+              <li>100% pure and true SVG; no raster images.</li>
+            </ul>
+            <h2>Simple</h2>
+            <ul>
+              <li>near 0% learning curve for both <span>end-users</span> and <span>developers</span>.</li>
+            </ul>
+            <h2>Efficient</h2>
+            <ul>
+              <li>0% libraries or frameworks dependencies.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- end of subpage-3-slide-7 -->
+
+        <div id="subapp-3-slide-6">
+          <div>
+            <h1>Or</h1>
+            <h2>If you have no time</h2>
+            <ul>
+              <li><span>Give</span> your responsive code, design, or layout to us.</li>
+            </ul>
+            <h2>If not want to spend money</h2>
+            <ul>
+              <li>contact@uicuxd.com and get <span>free</span> consultancy.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- end of subpage-3-slide-7 -->
+      </div>
+      <!-- end of app-3 front-end -->
+
+      <!-- UXD app -->
+      <input type="radio" id="control-app-2" name="app-controller">
+      <div id="app-2" >
+        <div id="subapp-2-slide-1">
+          <div>
+            <h1>Why User Experience Design</h1>
+            <p>tudies of user behavior on the Web find a low tolerance for <span>difficult designs</span> or <span>slow sites</span>.</p>
+            <p>People do not want to <span>wait.</span>
+            <p>And they don't want to <span>learn</span> how to use a home page. There's no such thing as a training class or a manual for a Web site.</p>
+            <p>People have to be able to <span>grasp</span> the functioning of the site immediately after scanning the home page—for a few seconds at most.</p>
+            <p>Otherwise, most casual users simply leave the site and <span>browse</span> or <span>shop</span> elsewhere. <a href="https://en.wikipedia.org/wiki/Usability#Introduction" target="_blank">wikipedia</a></p>
+            <span class="name"><a href="https://en.wikipedia.org/wiki/Jakob_Nielsen_(usability_consultant)" target="_blank">Jakob Nielson</a></span>
+          </div>
+        </div>
+        <!-- Jakob Nielson's photo -->
+        <div id="subapp-2-slide-2">
+          <div></div>
+        </div>
+
+        <div id="subapp-2-slide-3">
+          <div>
+            <h1>UXD is <span>not</span> user interface design</h1>
+            <div>
+              <p>It is not about adding images, buttons and animations to a website or web-application.</p>
+              <hr>
+              <p>It is about finding <span>mismatches</span>.</p>
+            </div>
+            <div class="puzzle-mismatch">
+              <div>01</div>
+              <div>02</div>
+              <div>03</div>
+              <div>04</div>
+              <div>05</div>
+              <div>06</div>
+            </div>
+          </div>
+        </div>
+        <!-- end of subapp-2-slide-3 -->
+
+        <div id="subapp-2-slide-4">
+          <div>
+            <h1>UXD is <span>not</span> just about users</h1>
+            <div>
+              <p>It is about finding the sweet spot between the <span>user's needs</span> and the <span>business goals</span>, and ensure that design is on board.</p>
+              <hr>
+              <p>It is about matching the puzzle that <span>both</span> users and business confront</p>
+            </div>
+            <div class="puzzle-match">
+              <div>01</div>
+              <div>02</div>
+              <div>03</div>
+              <div>04</div>
+              <div>05</div>
+              <div>06</div>
+            </div>
+          </div>
+        </div>
+        <!-- end of subapp-2-slide-4 -->
+
+        <div id="subapp-2-slide-5">
+          <div>
+            <h1><span>Formal</span> definition</h1>
+            <div>
+              <p>User Experience simply refers to the way a product behaves and is used in the real world. A positive user experience is one in which the goals of the <span>both</span> user and the organization that created the product <span>are met</span>.</p>
+              <span class="name">Jesse James Garret. Author of <i>The Elements of Users Experience</i></span>
+              <p></p>
+            </div>
+            <!-- UX photo -->
+            <div></div>
+          </div>
+        </div>
+        <!-- end of subapp-2-slide-5 -->
+
+        <div id="subapp-2-slide-6">
+          <div>
+            <h1>Human <span>Errors</span></h1>
+            <div>
+              <p>Design in industry should not be just about <span>adorning</span> or <span>beautifying</span> the product. It also should be about <span>preventing</span> users from making mistakes or errors.</p>
+              <hr>
+              <p>Mostly human errors is because of <span>poorly</span> design system.</p>
+              <span class="name"><i>Black Box Thinking</i> by Matthew Syed.</span>
+              <p></p>
+            </div>
+            <!-- human error photo -->
+            <div></div>
+          </div>
+        </div>
+        <!-- end of subapp-2-slide-6 -->
+
+        <div id="subapp-2-slide-7">
+          <div>
+            <h1>For Example:</h1>
+            <h2>Mismatch:</h2>
+            <ul>
+              <li>Trying to <span>fit</span> desktop-box-model into a smart-phone screen-size is a mismatch.</li>
+            </ul>
+            <h2>Match:</h2>
+            <ul>
+              <li>What smart-phones users really need is a separate and <span>different</span> layout then minor-desktop-view.</li>
+
+            </ul>
+            <h2>Poorly Design System:</h2>
+            <ul>
+              <li>The present layout for responsive design causes headache for both <span>users</span> and <span>businesses</span>.</li>
+            </ul>
+          </div>
+        </div>
+        <div id="subapp-2-slide-8">
+          <div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>Design for <span>needs</span>,</p>
+                    <p>not just for <span>eyes</span>.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of div#subpage-2-slide-6 -->
+
+        <div id="subapp-2-slide-9">
+          <div>
+            <h1>Try Our Smart-Phone layout</h1>
+            <h2>Why?</h2>
+            <ul>
+              <li>It is what users and businesses both <span>need</span>.</li>
+            </ul>
+            <h2>How</h2>
+            <ul>
+              <li>Any <span>front-end</span> team or developer can develop and simulate Android, IOS, or Windows-Phone application.</li>
+            </ul>
+            <h2>Benefit</h2>
+            <ul>
+              <li>near 0% learning curve for <span>end-users</span>.</li>
+              <li>no <span>headaches</span> for developers to take care of fitting their desktop-box-model into smartphone-box-model.</li>
+              <li>good for <span>new startups</span> and <span>businesses</span>, if they do not want to have separate <span>mobile</span> applications or cannot, because of mobile applications' costs.</li>
+            </ul>
+          </div>
+        </div>
+        <div id="subapp-2-slide-10">
+          <div>
+            <h1>Or</h1>
+            <h2>If you have no time</h2>
+            <ul>
+              <li><span>Give</span> your responsive code, design, or layout to us.</li>
+            </ul>
+            <h2>If not want to spend money</h2>
+            <ul>
+              <li>contact@uicuxd.com and get <span>free</span> consultancy.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- end of div#subpage-2-slide-7 -->
+      </div>
+      <!-- end of app-2 UXD -->
+
+      <!-- app-1 == home == icons -->
+      <input type="radio" id="control-app-1" name="app-controller" checked>
+      <div id="app-1">
+        <label for="control-app-2" id="icon-2"><span>UXD</span></label>
+        <label for="control-app-3" id="icon-3"><span>Front-end</span></label>
+        <label for="control-app-4" id="icon-4"><span>Services</span></label>
+        <label for="control-app-5" id="icon-5"><span>Projects</span></label>
+        <label for="control-app-6" id="icon-6"><span>About</span></label>
+        <label for="control-app-7" id="icon-7"><span>Contact</span></label>
+        <label for="control-app-8" id="icon-8"><span>Email</span></label>
+        <label for="control-app-9" id="icon-9"><span>Copyright</span></label>
+        <label for="control-app-10" id="icon-10">
+          <audio controls>
+            <source src="./media/bensound-creativeminds.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+        </label>
+        <label for="control-app-11" id="icon-11"><span>Films</span></label>
+      </div>
+      <!-- end of div#app-1 -->
+    </div>
+    <!-- end of div#display -->
+
+    <div id="menu">
+      <!--  <label for="control-navigation" id="hide-navigation" ></label> -->
+      <label for="control-app-1" id="icon-1" data-name="home"></label>
+      <label for="control-dialog-box" id="icon" data-name="back"></label>
+    </div>
+    <!-- end of div#menu -->
+  </div>
+  <!-- end of div#screen -->
+</div>
+<!-- end of div#phone -->
+
+<div id="ERROR">
+  <div id="old-IE">
+    <h1>Old Microsoft Internet Explorer detected</h1>
+    <h1>Please Update Your Browser!</h1>
+  </div>
+  <div id="USS">
+    <h1>Unexpected Screen Size.</h1>
+  </div>
+  <svg  id="warning" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" width="48" height="48">
+    <rect fill="#F00" x="6" y="6" width="36" height="36" rx="5" ry="5" transform="rotate(45,24,24)"></rect>
+    <circle fill="#FFF" r="3" cx="24" cy="39"></circle>
+    <path fill="#FFF"  d="M21,30 l-1,-18 a3,3 0 1,1 8,0 l-1,18 a3,3 0 1,1 -6,0"></path>
+  </svg>
+</div>

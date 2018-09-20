@@ -1,0 +1,33 @@
+/*
+    uicuxd.com common CSS rules
+    Copyright (C) 2018 Shakiba Moshiri
+*/
+
+html,body { margin: 0; padding: 0; height: 100%; border: none; font-size: 15px; overflow: hidden; }
+body{ background-color: #F00; background-image: url(../svg/yin-yang-logo-loading.svg); -webkit-background-size: auto; background-size: auto; background-position: 50% 50%; background-repeat: no-repeat; width: 100%; height: 100%; font-family: "Signika", sans-serif; }
+
+/* if JavaScript has been disabled, show a warning message */
+body > input#close-noscript { display: none;  }
+body > label#close-noscript-label { position: absolute; width: 100%; height: 4em; top: 0; bottom: 0; margin: auto; z-index: 99; color: #FFF; background-color: rgba(0,0,0,0.6); background-image: url(../svg/error.svg); background-position: 0 50%; background-repeat: no-repeat;  cursor: pointer;  }
+body > label#close-noscript-label p { text-align: center; }
+body > input#close-noscript:checked { display: none; }
+body > input#close-noscript:checked+ label { display: none; }
+
+/* taking care of some errors, like: unexpected screen size and old version of IE browsers */
+div#ERROR { display: none; z-index: 99; text-align: center; margin: 0; padding: 0; border: none;  }
+div#ERROR { width: 100%; height: 100%; opacity: 0.8; top: 0; left; 0; background-color: #000; position: absolute; color: #FFF; }
+div#ERROR > * { display: none; }
+div#ERROR > div { left: 25%; top: 25%; right: 25%; bottom: 25%; position: absolute;  }
+div#ERROR > svg { left: 0; top: 0; right: 0; bottom: 0; margin: auto; position: absolute; }
+
+/* two font used. "Signika-Regular" for all the contents and "IndieFlower" for two quotes */
+@font-face {
+	font-family: "Signika";
+	src: url( "../fonts/Signika/Signika-Regular.ttf" ) format ( "truetype" );
+}
+@font-face {
+	font-family: "IndieFlower";
+	src: url( "../fonts/Indie_Flower/IndieFlower.ttf" ) format( "truetype" );
+	/*    src: url( "../fonts/Baloo/Baloo-Regular.ttf" ) format( "truetype" ); */
+	/*    src: url( "../fonts/Leckerli_One/LeckerliOne-Regular.ttf" ) format( "truetype" );*/
+}

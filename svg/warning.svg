@@ -1,0 +1,6 @@
+<svg id="warning" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" width="48" height="48">
+  <rect fill="#F44336" x="6" y="6" width="36" height="36" rx="5" ry="5" transform="rotate(45,24,24)"></rect>
+  <circle fill="#FFF" r="3" cx="24" cy="39"></circle>
+  <path fill="#FFF" stroke="#FFF" stroke-width="1" stroke-linecap="round"  d="M21,30 l-1,-18 a3,3 0 1,1 8,0 l-1,18 a3,3 0 1,1 -6,0"></path>
+</svg>
+
