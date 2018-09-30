@@ -149,7 +149,7 @@
   div#subpage-1-slide-4 > div#container-our-service { width: 600px; height: 600px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
 
   div#container-our-service { width: 600px; height: 600px; position: relative; }
-  div#container-our-service > input { width: 100px; height: 100px; position: absolute; bottom: 0; left; 0; opacity: 0.0; margin: 0; padding: 0; border: none; }
+  div#container-our-service > input { width: 100px; height: 100px; position: absolute; bottom: 0; left: 0; opacity: 0.0; margin: 0; padding: 0; border: none; }
   div#container-our-service > input:hover { cursor: pointer; }
   div#container-our-service > svg > g:not(#play) { fill: #4B4B4B; }
   div#container-our-service > svg > g:not(#services):not(#play) > path { stroke: #FFF; stroke-width: 2px; }
