@@ -86,12 +86,9 @@
   div#main > div[id|="page"] > div[id|="subpage"] > div { max-height: 650px; max-width: 1024px; margin: auto; }
 
   /* var simple custom scroll bar */
-  div#main > div[id|="page"]::-webkit-scrollbar { width: 17px; }
+  div#main > div[id|="page"]::-webkit-scrollbar { width: 15px; }
   div#main > div[id|="page"]::-webkit-scrollbar-track { background-color: #FFF; }
   div#main > div[id|="page"]::-webkit-scrollbar-thumb { background-color: #CCC; }
-  div#main > div[id|="page"]::-mz-scrollbar { width: 17px; }
-  div#main > div[id|="page"]::-mz-scrollbar-track { background-color: #FFF; }
-  div#main > div[id|="page"]::-mz-scrollbar-thumb { background-color: #CCC; }
 
   /* page-1 */
   div#page-1 { background-color: rgb(220,231,238); }
