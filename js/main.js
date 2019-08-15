@@ -16,7 +16,11 @@ console.log( 'main.js was loaded' );
 				// then add "active-button" to the target
 				this.classList.add( "active-button" );
 				// then add "active-page" to the target according to activated button
-				document.getElementById( "page-" + this.id.substr( 7 ) ).classList.add( "active-page" );
+                var page_number = this.id.substr( 7 );
+                if( localStorage.page ){
+                    localStorage.page = page_number;
+                }
+				document.getElementById( "page-" + page_number ).classList.add( "active-page" );
 			}
 		}
 	}( document.querySelectorAll( "span[id|=button]" ), document.querySelectorAll( "div[id|=page]" ) ) );
